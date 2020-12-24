@@ -13,14 +13,14 @@ class EmojiDefinitionViewController: UIViewController {
     @IBOutlet weak var emojiDefinitionLabel: UILabel!
     @IBOutlet weak var blownUpEmojiLabel: UILabel!
     
-    var emoji = "💺"
+    var emoji = Emoji()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        blownUpEmojiLabel.text = emoji
+        blownUpEmojiLabel.text = emoji.character
         
-        emojiDefinitionLabel.text = emoji.unicodeScalars.first!.properties.name!.capitalized
+        emojiDefinitionLabel.text = "The \(emoji.character) emoji is the \(emoji.definition). It was made in \(emoji.year) is in the \(emoji.category) category and Tomo gave it a \(emoji.rating)"
 
     }
 
